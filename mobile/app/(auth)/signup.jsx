@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import styles from "../../assets/styles/signup.styles";
 import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../../constants/colors.js";
-import { Link } from "expo-router";
+import { router } from "expo-router";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -123,11 +123,10 @@ export default function Signup() {
             {/* FOOTER */}
             <View style={styles.footer}>
               <Text style={styles.footerText}>Already have an account?</Text>
-              <Link href="/(auth)" asChild>
-                <TouchableOpacity>
-                  <Text style={styles.link}>Login</Text>
-                </TouchableOpacity>
-              </Link>
+
+              <TouchableOpacity onPress={() => router.back()}>
+                <Text style={styles.link}>Login</Text>
+              </TouchableOpacity>
             </View>
           </View>
         </View>
