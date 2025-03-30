@@ -11,7 +11,7 @@ import React, { useState } from "react";
 import styles from "../../assets/styles/signup.styles";
 import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../../constants/colors.js";
-import { router } from "expo-router";
+import { useRouter } from "expo-router";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
@@ -19,6 +19,7 @@ export default function Signup() {
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const router = useRouter();
 
   const handleSignin = () => {};
   return (
