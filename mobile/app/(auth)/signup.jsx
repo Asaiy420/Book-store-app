@@ -12,16 +12,22 @@ import styles from "../../assets/styles/signup.styles";
 import { Ionicons } from "@expo/vector-icons";
 import COLORS from "../../constants/colors.js";
 import { useRouter } from "expo-router";
+import { useAuthStore } from "../../store/authStore.js";
 
 export default function Signup() {
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
+  const { user, isLoading, register } = useAuthStore();
+
+   
+
   const router = useRouter();
 
-  const handleSignin = () => {};
+  const handleSignUp = () => {
+
+  };
   return (
     <KeyboardAvoidingView
       style={{ flex: 1 }}
@@ -112,7 +118,7 @@ export default function Signup() {
             {/* SIGNUP BUTTON*/}
             <TouchableOpacity
               style={styles.button}
-              onPress={handleSignin}
+              onPress={handleSignUp}
               disabled={isLoading}
             >
               {isLoading ? (
