@@ -9,7 +9,7 @@ export const useAuthStore = create((set) => ({
     set({ isLoading: true });
     try {
       const response = await fetch(
-        "https://book-store-app-ekpn.onrender.com/api/auth/register",
+        "https://book-store-app-ekpn.onrender.com",
         {
           method: "POST",
           headers: {
