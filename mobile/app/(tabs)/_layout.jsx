@@ -5,7 +5,7 @@ import COLORS from "../../constants/colors";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 export default function TabLayout() {
-    const insects = useSafeAreaInsets();
+    const insets = useSafeAreaInsets();
   return (
     <Tabs
       screenOptions={{
@@ -21,7 +21,8 @@ export default function TabLayout() {
           borderTopWidth: 1,
           borderTopColor: COLORS.border,
           paddingTop: 5,
-          height: 60 + insects.bottom,
+          paddingBottom: insets.bottom,
+          height: 60 + insets.bottom,
         },
       }}
     >
