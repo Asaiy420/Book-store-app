@@ -111,6 +111,20 @@ export default function Home() {
         keyExtractor={(item) => item._id}
         contentContainerStyle={styles.listContainer}
         showsVerticalScrollIndicator={false}
+
+        ListHeaderComponent={
+          <View style={styles.header}>
+            <Text style={styles.headerTitle}>Book World🗺️</Text>
+            <Text style={styles.headerSubtitle}>Find your next read from the community below 👇</Text>
+          </View>
+        }
+        ListEmptyComponent={
+          <View style={styles.emptyContainer}>
+            <Ionicons name="book-outline" size={60} color={COLORS.textSecondary}/>
+            <Text style={styles.emptyText}>No Recommendations Yet...</Text>
+            <Text style={styles.emptySubtext}>Be the first one to share a book!</Text>
+          </View>
+        }
       />
     </View>
   );
